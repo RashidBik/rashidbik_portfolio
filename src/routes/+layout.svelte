@@ -1,50 +1,43 @@
 <script>
+// @ts-nocheck
+	import { Pane, Splitpanes } from 'svelte-splitpanes';
 	import Header from './Header.svelte';
 	import './styles.css';
 </script>
-
-<div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
+<main>
+	<Header/>
+	<section>
+		<Splitpanes class="splitpanes">
+			<Pane minSize={20} maxSize={50} size={30} class="pane">
+				<div class="menu">
+					<aside>side</aside>
+					<div>another</div>
+				</div>
+			</Pane>
+			<Pane></Pane>
+		</Splitpanes>
+	</section>
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		footer
 	</footer>
-</div>
+</main>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
+section{
+	height: 80vh;
+	background: #888;
+	width: 100%;
+}
+.pane:hover{
+	border: 3px solid rgb(163, 60, 60);
+}
+.menu{
+	display: grid;
+	grid-template-columns: 20% 200px;
+}
+aside{
+	background: rgb(80, 76, 76);
+}
 	@media (min-width: 480px) {
 		footer {
 			padding: 12px 0;

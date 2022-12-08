@@ -26,5 +26,8 @@
 		"vite": "^3.2.4",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"svelte-splitpanes": "^0.7.0"
+	}
 }
