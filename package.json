@@ -28,6 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"fontawesome-svelte": "^2.0.1",
 		"svelte-splitpanes": "^0.7.0"
 	}
 }

@@ -1,8 +1,13 @@
 <script>
 // @ts-nocheck
 	import { Pane, Splitpanes } from 'svelte-splitpanes';
-	import Header from './Header.svelte';
 	import './styles.css';
+	import Header from './Header.svelte';
+	import SideIcons from './SideIcons.svelte';
+	import SideMenu from './SideMenu.svelte';
+    import Veiw from './Veiw.svelte';
+	import Footer from './Footer.svelte';
+
 </script>
 <main>
 	<Header/>
@@ -10,15 +15,18 @@
 		<Splitpanes class="splitpanes">
 			<Pane minSize={20} maxSize={50} size={30} class="pane">
 				<div class="menu">
-					<aside>side</aside>
-					<div>another</div>
+					<SideIcons/>
+					<SideMenu/>
 				</div>
 			</Pane>
-			<Pane></Pane>
+			<Pane>
+				<Veiw/>
+				<slot/>
+			</Pane>
 		</Splitpanes>
 	</section>
 	<footer>
-		footer
+		<Footer />
 	</footer>
 </main>
 
@@ -33,7 +41,7 @@ section{
 }
 .menu{
 	display: grid;
-	grid-template-columns: 20% 200px;
+	grid-template-columns: 1fr 50%;
 }
 aside{
 	background: rgb(80, 76, 76);
